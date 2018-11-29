@@ -1,0 +1,43 @@
+
+.banner_root{
+  position: relative;
+  padding: 15em 0 12em;
+  overflow: hidden;
+  background: #000;
+  color: aliceblue;
+
+  .nav{
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    &>section{
+      position: relative;
+      display: block;
+      z-index: 10;
+      text-shadow: 0 0 90px #000;
+      &:first-child{
+        font-size: 3em;
+        font-weight: bold;
+      }
+      &:last-child{
+        margin: .25em 0;
+        padding: 0;
+        font-size: 1.5em;
+        line-height: 1.5em;
+      }
+    }
+  }
+
+  .background{
+    position: absolute;
+    background: no-repeat scroll cover #000;
+    background-image:url(../../assets/banner/home.jpg);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: translate3d(0px, 0px, 0px);
+    height: 100%;
+    z-index: 5;
+  }
+}

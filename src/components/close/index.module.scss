@@ -1,0 +1,35 @@
+
+$width:65%;
+$size:1.5px;
+$color:#a58b51;
+$hoverColor:#f26a3d;
+
+.close_root{
+  @include square(30px);
+  border: 1px solid $color;
+  border-radius: 30px;
+  position: relative;
+  will-change: transform,color,border;
+  transition: border 1s ease , transform .5s ease;
+  
+  &:hover{
+    border: 1px solid $hoverColor;
+    @include transform(rotate(360deg));
+    &:after , &:before{
+      background-color:$hoverColor;
+    }
+  }
+
+  &:after{
+    transition: background-color 1s ease;
+    @include lineInner($width,$size,$color);
+    @include transform(rotate(45deg));
+  }
+
+  &:before{
+    transition: background-color 1s ease;
+    @include lineInner($size,$width,$color);
+    @include transform(rotate(45deg));
+  }
+
+}

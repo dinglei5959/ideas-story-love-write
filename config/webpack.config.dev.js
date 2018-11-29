@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const path = require('path');
@@ -17,6 +17,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
+const OtherUtils = require('./global');
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -69,6 +70,9 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
   ];
   if (preProcessor) {
     loaders.push(require.resolve(preProcessor));
+    if(preProcessor==='sass-loader'){
+      loaders.push(OtherUtils.sassResourceLoader);
+    }
   }
   return loaders;
 };
@@ -150,6 +154,7 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      ...OtherUtils.alias
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding
