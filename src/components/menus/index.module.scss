@@ -35,10 +35,16 @@
   }
 
   .rightbar{
-    @include fixedAll(fixed);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
     z-index:$backdrop_zindex; 
     background: #f2f2f0;
-    left: 85%;
+    width: 15%;
+    min-width: 200px;
 
     @include transform(translate(100%,0,0));
 

@@ -18,6 +18,7 @@ function resolve(dir) {
 
 const alias = {
   '@': resolve('src'),
+  '@md':resolve('src/markdown'),
   '@assets': resolve('src/assets'),
   '@components': resolve('src/components'),
   '@lib': resolve('src/lib'),
