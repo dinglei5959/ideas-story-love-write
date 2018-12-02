@@ -14,7 +14,7 @@ export default class Home extends React.Component{
     return (<article>
       <Banner></Banner>
       
-      <div dangerouslySetInnerHTML={{__html: CssClasssicLayout}}></div>
+      <div dangerouslySetInnerHTML={{__html: CssClasssicLayout.html}}></div>
 
     </article>)
   }
