@@ -8,6 +8,8 @@ import style from './index.module.scss';
 
 import { connect } from 'react-redux';
 
+import { addNavListItem } from '@lib/action/actions';
+
 
 
 
@@ -15,7 +17,6 @@ class Menus extends React.Component {
 
   constructor(props){
     super(props);
-    console.log(this.props)
     this.state = {
       rightBarShow:false
     }
@@ -35,7 +36,23 @@ class Menus extends React.Component {
     })
   }
 
+  /**
+   * 右边栏
+   */
   getRightBarEle(){
+    let pending = false; // 节流标识符
+    let innerText ='';
+    const inputHandler = (e) => {
+      innerText = e.target.value;
+    }
+    /**
+     * 添加操作添加了 
+     */
+    const addItem = () => {
+      // reducer
+      this.props.addNavListItem({name:innerText, icon:'test'});
+    }
+
     return <div className={style.rightbar}>
       <section className={style.title}>Navigation</section>
 
@@ -47,6 +64,12 @@ class Menus extends React.Component {
           return (<div key={item.name}> <img src={item.icon} alt="" /> {item.name}  </div>)
         })}
       </section>
+      
+      <section >
+        <input onInput={inputHandler.bind(this)} type="text"/>
+        <button onClick={addItem.bind(this)}>点击添加navItem</button>
+      </section>
+
     </div>
   }
 
@@ -75,4 +98,13 @@ const mapStateToProps = state => {
   return { navList:state.listGo.navList }
 }
 
-export default connect(mapStateToProps,null)(Menus);
+const mapDispatchToProps = dispatch =>{
+  return {
+    addNavListItem: item => {
+      dispatch( addNavListItem(item) );
+    }
+  }
+}
+
+// mapDispatch 第一种写法
+export default connect(mapStateToProps, mapDispatchToProps )(Menus);

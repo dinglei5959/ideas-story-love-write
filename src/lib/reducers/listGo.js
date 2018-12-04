@@ -17,8 +17,11 @@ const initialState = {
 export default function listGoReducer( state = initialState , action ){
   switch (action.type){
     case NAV_LIST_item_ADD:  // 添加 navlist item的动作
-      state.navList.push(action.payload.item);
-      return state;
+      const { navList } = state;
+      return {
+        ...state,
+        navList:[...navList,action.payload.item]
+      };
       // 默认什么都不做
     default:
       return state;
