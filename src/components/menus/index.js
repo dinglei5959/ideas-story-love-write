@@ -8,17 +8,18 @@ import style from './index.module.scss';
 
 import { connect } from 'react-redux';
 
-import { addNavListItem } from '@lib/action/actions';
+import { addNavListItem , addNavListItemAsync } from '@lib/action/actions';
 
 
-
+let innerText = '';
 
 class Menus extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {
-      rightBarShow:false
+      rightBarShow:false,
+      innerText:''
     }
   }
 
@@ -41,9 +42,8 @@ class Menus extends React.Component {
    */
   getRightBarEle(){
     let pending = false; // 节流标识符
-    let innerText ='';
     const inputHandler = (e) => {
-      innerText = e.target.value;
+     innerText = e.target.value;
     }
     /**
      * 添加操作添加了 
@@ -51,6 +51,14 @@ class Menus extends React.Component {
     const addItem = () => {
       // reducer
       this.props.addNavListItem({name:innerText, icon:'test'});
+    }
+
+    /**
+     * 异步添加操作添加了 
+     */
+    const addItemAsync = () => {
+      // reducer
+      this.props.addNavListItemAsync({name:innerText, icon:'test'});
     }
 
     return <div className={style.rightbar}>
@@ -68,6 +76,7 @@ class Menus extends React.Component {
       <section >
         <input onInput={inputHandler.bind(this)} type="text"/>
         <button onClick={addItem.bind(this)}>点击添加navItem</button>
+        <button onClick={addItemAsync.bind(this)}>点击异步saga添加navItem</button>
       </section>
 
     </div>
@@ -102,6 +111,9 @@ const mapDispatchToProps = dispatch =>{
   return {
     addNavListItem: item => {
       dispatch( addNavListItem(item) );
+    },
+    addNavListItemAsync: item => {
+      dispatch( addNavListItemAsync(item) );
     }
   }
 }

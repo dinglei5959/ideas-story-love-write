@@ -5,7 +5,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import Store from '@lib/configStore';
+import Store , { sagaMiddleware } from '@lib/configStore';
+import mySagas from '@lib/sagas';
+
+sagaMiddleware.run(mySagas);
 
 ReactDOM.render(
   <Provider store={Store}>
