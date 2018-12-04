@@ -18,10 +18,8 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const OtherUtils = require('./global');
-const marked = require("marked");
-const renderer = new marked.Renderer();
-var MarkdownIt = require('markdown-it'),
-md = new MarkdownIt();
+const MarkdownIt = require('markdown-it');
+const md = new MarkdownIt();
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -276,28 +274,11 @@ module.exports = {
               sourceMaps: false,
             },
           },
-
-          // {
-          //   test: /\.md$/,
-          //   use: [
-          //     {
-          //         loader: "html-loader"
-          //     },
-          //     {
-          //         loader: "markdown-loader",
-          //         options: {
-          //           renderer
-          //         }
-          //     }
-          //   ]
-          // },
-
           {
             test: /\.md$/,
             loader: 'frontmatter-markdown-loader',
             options: {
               markdown: (body) => {
-                console.log(body);
                 return md.render(body)
               }
             }

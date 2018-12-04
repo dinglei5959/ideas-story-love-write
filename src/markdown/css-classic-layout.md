@@ -1,3 +1,16 @@
+---
+title: css经典布局
+author: 牛有德
+date: 2018.09.11 17:37*
+draft: false
+comments: true
+star: false
+cover: ''
+tags: 
+  - css
+---
+
+
 #布局类型
 - 浮动布局
 - 流式布局

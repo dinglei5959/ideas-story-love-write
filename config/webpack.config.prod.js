@@ -22,6 +22,8 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const OtherUtils = require('./global');
+const MarkdownIt = require('markdown-it');
+const md = new MarkdownIt();
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -347,17 +349,12 @@ module.exports = {
 
           {
             test: /\.md$/,
-            use: [
-              {
-                  loader: "html-loader"
-              },
-              {
-                  loader: "markdown-loader",
-                  options: {
-                      /* your options here */
-                  }
+            loader: 'frontmatter-markdown-loader',
+            options: {
+              markdown: (body) => {
+                return md.render(body)
               }
-            ]
+            }
           },
 
           // "postcss" loader applies autoprefixer to our CSS.
