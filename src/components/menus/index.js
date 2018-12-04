@@ -1,26 +1,21 @@
 import React from 'react';
 
 import { Close } from '@components';
-import { CSSTransition , Transition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 import down from '@assets/banner/down.png'
 import style from './index.module.scss';
 
-import {  Archive, Author, Home, Subscribe, Tag } from '@assets/menus';
-
-const navItem = [
-  {name:'Home', icon:Home},
-  {name:'Tags', icon:Tag},
-  {name:'Archive', icon:Archive},
-  {name:'Author', icon:Author},
-  {name:'Subscribe', icon:Subscribe}
-]
+import { connect } from 'react-redux';
 
 
-export default class Menus extends React.Component {
 
-  constructor(){
-    super();
+
+class Menus extends React.Component {
+
+  constructor(props){
+    super(props);
+    console.log(this.props)
     this.state = {
       rightBarShow:false
     }
@@ -48,7 +43,7 @@ export default class Menus extends React.Component {
 
       {/* 列表 */}
       <section className={style.item}>
-        {navItem.map((item)=>{
+        {this.props.navList.map((item)=>{
           return (<div key={item.name}> <img src={item.icon} alt="" /> {item.name}  </div>)
         })}
       </section>
@@ -74,3 +69,10 @@ export default class Menus extends React.Component {
     </article>)
   }
 }
+
+
+const mapStateToProps = state => {
+  return { navList:state.listGo.navList }
+}
+
+export default connect(mapStateToProps,null)(Menus);
