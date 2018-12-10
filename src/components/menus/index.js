@@ -61,6 +61,7 @@ class Menus extends React.Component {
       this.props.addNavListItemAsync({name:innerText, icon:'test'});
     }
 
+
     return <div className={style.rightbar}>
       <section className={style.title}>Navigation</section>
 
