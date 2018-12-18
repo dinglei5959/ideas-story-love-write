@@ -31,6 +31,8 @@ const openBrowser = require('react-dev-utils/openBrowser');
 const paths = require('../config/paths');
 const config = require('../config/webpack.config.dev');
 const createDevServerConfig = require('../config/webpackDevServer.config');
+const createMdList = require('./cfl');
+const { mdpath } = require('./config');
 
 const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
@@ -92,22 +94,26 @@ checkBrowsers(paths.appPath, isInteractive)
 
 
     const devServer = new WebpackDevServer(compiler, serverConfig);
-    // Launch WebpackDevServer.
-    devServer.listen(port, HOST, err => {
-      if (err) {
-        return console.log(err);
-      }
-      if (isInteractive) {
-        clearConsole();
-      }
-      console.log(chalk.cyan('Starting the development server...\n'));
-      openBrowser(urls.localUrlForBrowser);
-    });
 
-    ['SIGINT', 'SIGTERM'].forEach(function(sig) {
-      process.on(sig, function() {
-        devServer.close();
-        process.exit();
+    
+    createMdList(mdpath,()=>{
+      // Launch WebpackDevServer.
+      devServer.listen(port, HOST, err => {
+        if (err) {
+          return console.log(err);
+        }
+        if (isInteractive) {
+          clearConsole();
+        }
+        console.log(chalk.cyan('Starting the development server...\n'));
+        openBrowser(urls.localUrlForBrowser);
+      });
+
+      ['SIGINT', 'SIGTERM'].forEach(function(sig) {
+        process.on(sig, function() {
+          devServer.close();
+          process.exit();
+        });
       });
     });
   })
@@ -117,3 +123,4 @@ checkBrowsers(paths.appPath, isInteractive)
     }
     process.exit(1);
   });
+    
