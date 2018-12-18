@@ -1,0 +1,14 @@
+// 注册全局 css 类型
+@for $i from 1 through 30 {
+  .mr-#{$i} { margin-right:#{$i}px; };
+  .ml-#{$i} { margin-left:#{$i}px; };
+  .mt-#{$i} { margin-top:#{$i}px; };
+  .mb-#{$i} { margin-bottom:#{$i}px; };
+
+  .pr-#{$i} { padding-right:#{$i}px; };
+  .pl-#{$i} { padding-left:#{$i}px; };
+  .pt-#{$i} { padding-top:#{$i}px; };
+  .pb-#{$i} { padding-bottom:#{$i}px; };
+
+  .font-#{$i} { font-size: #{$i}px; };
+}

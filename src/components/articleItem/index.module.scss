@@ -1,0 +1,22 @@
+.article_item{
+  margin: 50px 0;
+  &>header{
+    
+    &>section{
+      &:first-child{ // title
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      &:last-child{ // intro
+        font-size: 12px;
+        font-family: Fira Sans,sans-serif;
+        color: #92969c;
+        margin: 10px 0;
+        &>div{
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

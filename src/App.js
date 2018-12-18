@@ -6,6 +6,7 @@ import { Menus } from '@components';
 import getRoutes from '@router';
 import './styles/normalize.scss';
 import './styles/initialize.scss';
+import './styles/global.scss';
 
 function RouteWithSubRoutes(route) {
   return (

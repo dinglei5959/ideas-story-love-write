@@ -68,3 +68,14 @@
   background-color: $color;
   margin: auto;
 }
+
+
+@mixin tapSet($type, $val , $direction){
+  #{$type-$direction}:$val;
+  @if $direction {
+    #{$type-$direction}:$val;
+  }
+  @else {
+    #{type}:$val;
+  }
+}

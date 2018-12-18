@@ -283,6 +283,11 @@ module.exports = {
               }
             }
           },
+          //处理json文件
+          {
+            test: /\.json$/,
+            loader: 'json-loader'
+          },
 
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
