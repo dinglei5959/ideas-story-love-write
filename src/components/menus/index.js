@@ -74,11 +74,11 @@ class Menus extends React.Component {
         })}
       </section>
       
-      <section >
+      {/* <section >
         <input onInput={inputHandler.bind(this)} type="text"/>
         <button onClick={addItem.bind(this)}>点击添加navItem</button>
         <button onClick={addItemAsync.bind(this)}>点击异步saga添加navItem</button>
-      </section>
+      </section> */}
 
     </div>
   }

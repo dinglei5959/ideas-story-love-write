@@ -7,7 +7,7 @@ export default class ArticleItem extends React.Component {
   // }
 
   render(){
-    let { title , author , tags , date } = this.props;
+    let { title , author , tags , date , content } = this.props;
     return <div className={style.article_item}>
       <header>
         <section>{title}</section>
@@ -25,7 +25,7 @@ export default class ArticleItem extends React.Component {
       </header>
 
       <article>
-
+        {content}
       </article>
     </div>
   }

@@ -28,8 +28,10 @@ module.exports = function (pathname,callback){
   let fileNamesList = findSync(pathname);
 
   fileNamesList = fileNamesList.map((item)=>{
-    return item.match(reg)[0]||'';
-  });
+    return  (item.match(reg) && item.match(reg)[0] ) ? item.match(reg)[0] : '';
+  }).filter(item=>(!!item));
+
+  console.log(fileNamesList);
 
   var content = JSON.stringify({fileNamesList}); 
   console.log(content);

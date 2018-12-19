@@ -1,7 +1,8 @@
 .article_item{
-  margin: 50px 0;
+  padding: 50px 0 80px;
+  border-bottom: 1.3px solid #c5cddd;
   &>header{
-    
+    margin-bottom: 20px;
     &>section{
       &:first-child{ // title
         font-size: 28px;
@@ -18,5 +19,12 @@
         }
       }
     }
+  }
+
+  &>article{
+    font-size: 17px;
+    color: #5b6068;
+    line-height: 1.5em;
+    text-indent: 1em;
   }
 }
