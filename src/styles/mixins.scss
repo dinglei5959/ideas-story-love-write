@@ -79,3 +79,18 @@
     #{type}:$val;
   }
 }
+
+.calContainerWidth{
+  @media screen and (max-width:$small-screen-size) {
+    width: 90%;
+  }
+  @media screen and (min-width:$small-screen-size) and (max-width:$middle-screen-size) {
+    width: 70%;
+  }
+  @media screen and (min-width:$middle-screen-size) and (max-width:$big-screen-size) {
+    width: 60%;
+  }
+  @media screen and (min-width:$big-screen-size) {
+    width: 50%;
+  }
+}

@@ -10,7 +10,7 @@ export default class ArticleItem extends React.Component {
     let { title , author , tags , date , content } = this.props;
     return <div className={style.article_item}>
       <header>
-        <section>{title}</section>
+        <section onClick={this.props.goArticle}>{title}</section>
         <section>
           <div> 
             <span>{author}</span> 

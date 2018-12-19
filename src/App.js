@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch , Route } from 'react-router-dom';
+import { Switch , Route ,Redirect } from 'react-router-dom';
 
 import { Menus } from '@components';
 
@@ -11,6 +11,7 @@ import './styles/global.scss';
 function RouteWithSubRoutes(route) {
   return (
     <Route
+      exact={route.exact}
       path={route.path}
       render={props => (
         // pass the sub-routes down to keep nesting

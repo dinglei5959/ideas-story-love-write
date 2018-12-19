@@ -8,6 +8,13 @@ import style from './index.module.scss';
 class Home extends React.Component{
   constructor(props){
     super();
+    this.goArticle.bind(this);
+  }
+
+  goArticle(index){
+    this.props.history.push({
+      pathname:'/article/' + index
+    });
   }
 
   render(){
@@ -17,11 +24,12 @@ class Home extends React.Component{
       
       <article className={style.article_container}>
         {/* 文章列表 */}
-        {this.props.articleList.map(article=>{
+        {this.props.articleList.map( (article ,index)=>{
           const { attributes , body , html } =  article;
           const { author , date , tags , title , abstract } = attributes;
           return <ArticleItem key={date} content={abstract}
-          author={author} date={date} tags={tags} title={title} />
+          
+          author={author} date={date} tags={tags} title={title} goArticle={()=>{ this.goArticle(index) }} />
         })}
       </article>
      

@@ -30,8 +30,15 @@
 
   .background{
     position: absolute;
-    background: no-repeat scroll cover #000;
+   // background: no-repeat scroll cover #000;
+    background:no-repeat scroll 50%/cover #000;
     background-image:url(../../assets/banner/home.jpg);
+    &:global(.default){
+      background-image:url(../../assets/banner/sangu.jpg);
+    }
+    &:global(.losanji){
+      background-image:url(../../assets/banner/losanji.jpg);
+    }
     left: 0;
     right: 0;
     top: 0;

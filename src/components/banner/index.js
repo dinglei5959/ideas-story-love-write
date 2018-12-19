@@ -9,7 +9,8 @@ export default class Banner extends React.Component {
         <section>Love, Story , Ideas And Write</section>
       </nav>
       
-      <div className={style.background}></div>
+      {/* type    */}
+      <div className={`${style.background} ${this.props.type||'default'}`}></div>
 
     </article>)
   }
