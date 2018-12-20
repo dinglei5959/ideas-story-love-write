@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/ideas-story-love-write/static/media/sangu.79bc0e6e.jpg"
   },
   {
-    "revision": "944770daa76aafff4357",
-    "url": "/ideas-story-love-write/static/css/main.8f21d964.chunk.css"
+    "revision": "7cfa92ecec705fa99414",
+    "url": "/ideas-story-love-write/static/css/main.796a717a.chunk.css"
   },
   {
     "revision": "04a830dd37b886c4a3e7",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/ideas-story-love-write/static/media/losanji.5db457a2.jpg"
   },
   {
-    "revision": "944770daa76aafff4357",
-    "url": "/ideas-story-love-write/static/js/main.944770da.chunk.js"
+    "revision": "7cfa92ecec705fa99414",
+    "url": "/ideas-story-love-write/static/js/main.7cfa92ec.chunk.js"
   },
   {
     "revision": "b9607351a2480724ba9de57751eb5685",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/ideas-story-love-write/static/media/tag.a2551dde.svg"
   },
   {
-    "revision": "3482ce8de0821b516053a67b14362cc7",
+    "revision": "6e8a3a500bd30ad5eebb6ea5752a7761",
     "url": "/ideas-story-love-write/index.html"
   }
 ];
