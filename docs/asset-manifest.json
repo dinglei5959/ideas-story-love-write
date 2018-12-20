@@ -1,9 +1,9 @@
 {
   "main.css": "/ideas-story-love-write/static/css/main.8f21d964.chunk.css",
-  "main.js": "/ideas-story-love-write/static/js/main.40402086.chunk.js",
-  "main.js.map": "/ideas-story-love-write/static/js/main.40402086.chunk.js.map",
-  "static/js/1.044ff400.chunk.js": "/ideas-story-love-write/static/js/1.044ff400.chunk.js",
-  "static/js/1.044ff400.chunk.js.map": "/ideas-story-love-write/static/js/1.044ff400.chunk.js.map",
+  "main.js": "/ideas-story-love-write/static/js/main.944770da.chunk.js",
+  "main.js.map": "/ideas-story-love-write/static/js/main.944770da.chunk.js.map",
+  "static/js/1.04a830dd.chunk.js": "/ideas-story-love-write/static/js/1.04a830dd.chunk.js",
+  "static/js/1.04a830dd.chunk.js.map": "/ideas-story-love-write/static/js/1.04a830dd.chunk.js.map",
   "runtime~main.js": "/ideas-story-love-write/static/js/runtime~main.97e0f5f0.js",
   "runtime~main.js.map": "/ideas-story-love-write/static/js/runtime~main.97e0f5f0.js.map",
   "static/media/index.module.scss": "/ideas-story-love-write/static/media/losanji.5db457a2.jpg",
@@ -14,6 +14,6 @@
   "static/media/tag.svg": "/ideas-story-love-write/static/media/tag.a2551dde.svg",
   "static/css/main.8f21d964.chunk.css.map": "/ideas-story-love-write/static/css/main.8f21d964.chunk.css.map",
   "index.html": "/ideas-story-love-write/index.html",
-  "precache-manifest.675eac50bdfee8e6792793c4e9b23b87.js": "/ideas-story-love-write/precache-manifest.675eac50bdfee8e6792793c4e9b23b87.js",
+  "precache-manifest.e9e31bc172e92dee73b157aacebcbd4e.js": "/ideas-story-love-write/precache-manifest.e9e31bc172e92dee73b157aacebcbd4e.js",
   "service-worker.js": "/ideas-story-love-write/service-worker.js"
 }
