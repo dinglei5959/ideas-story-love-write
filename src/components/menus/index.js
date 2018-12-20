@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import { addNavListItem , addNavListItemAsync } from '@lib/action/actions';
 
 
-let innerText = '';
+//let innerText = '';
 
 class Menus extends React.Component {
 
@@ -41,25 +41,25 @@ class Menus extends React.Component {
    * 右边栏
    */
   getRightBarEle(){
-    let pending = false; // 节流标识符
-    const inputHandler = (e) => {
-     innerText = e.target.value;
-    }
-    /**
-     * 添加操作添加了 
-     */
-    const addItem = () => {
-      // reducer
-      this.props.addNavListItem({name:innerText, icon:'test'});
-    }
+    // let pending = false; // 节流标识符
+    // const inputHandler = (e) => {
+    //  innerText = e.target.value;
+    // }
+    // /**
+    //  * 添加操作添加了 
+    //  */
+    // const addItem = () => {
+    //   // reducer
+    //   this.props.addNavListItem({name:innerText, icon:'test'});
+    // }
 
-    /**
-     * 异步添加操作添加了 
-     */
-    const addItemAsync = () => {
-      // reducer
-      this.props.addNavListItemAsync({name:innerText, icon:'test'});
-    }
+    // /**
+    //  * 异步添加操作添加了 
+    //  */
+    // const addItemAsync = () => {
+    //   // reducer
+    //   this.props.addNavListItemAsync({name:innerText, icon:'test'});
+    // }
 
 
     return <div className={style.rightbar}>

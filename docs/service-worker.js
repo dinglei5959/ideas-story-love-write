@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ideas-story-love-write/precache-manifest.1a949102ac85894566a19c3588341397.js"
+  "/ideas-story-love-write/precache-manifest.675eac50bdfee8e6792793c4e9b23b87.js"
 );
 
 workbox.clientsClaim();

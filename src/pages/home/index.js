@@ -25,7 +25,7 @@ class Home extends React.Component{
       <article className={style.article_container}>
         {/* 文章列表 */}
         {this.props.articleList.map( (article ,index)=>{
-          const { attributes , body , html } =  article;
+          const { attributes } =  article;
           const { author , date , tags , title , abstract } = attributes;
           return <ArticleItem key={date} content={abstract}
           
