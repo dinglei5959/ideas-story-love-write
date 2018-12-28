@@ -1,4 +1,6 @@
 
+$list: losanji , beaty , cool , gu;
+
 .banner_root{
   position: relative;
   padding: 15em 0 12em;
@@ -36,9 +38,12 @@
     &:global(.default){
       background-image:url(../../assets/banner/sangu.jpg);
     }
-    &:global(.losanji){
-      background-image:url(../../assets/banner/losanji.jpg);
+    @each $item in $list{
+      &:global(.#{$item}){
+        background-image:url(../../assets/banner/#{$item}.jpg);
+      }
     }
+
     left: 0;
     right: 0;
     top: 0;

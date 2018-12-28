@@ -26,8 +26,8 @@
     & > div {
       position: absolute;
     }
-    img {
-      @include square(2em);
+    .img {
+     // @include square(2em);
       margin-top: 0.25em;
       -webkit-animation: rightan 1s infinite;
       -webkit-animation-fill-mode: both;
@@ -99,11 +99,11 @@
 
 @-webkit-keyframes rightan {
   0% {
-    bottom: 0%;
+    transform: translateY(0%);
     opacity: 0;
   }
-  50% {
-    bottom: 5%;
+  100% {
+    transform: translateY(15%);;
     opacity: 1;
   }
 }

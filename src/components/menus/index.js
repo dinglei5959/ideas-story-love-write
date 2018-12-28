@@ -3,7 +3,7 @@ import React from 'react';
 import { Close } from '@components';
 import { CSSTransition } from 'react-transition-group';
 
-import down from '@assets/banner/down.png'
+import Down from '@components/down';
 import style from './index.module.scss';
 
 import { connect } from 'react-redux';
@@ -86,7 +86,7 @@ class Menus extends React.Component {
   render(){
     return (<article className={style.menu_root}>
       <div  onClick={this.open.bind(this)} className={style.button}>
-        <img src={down} alt=""/>
+        <Down className={style.img} color="#fff" size={20}></Down>
         <div>Menus</div>
       </div>
       
